@@ -1,13 +1,21 @@
 import { useState } from "react";
 
+import { Tasks } from "./components/Tasks";
 import { Header } from "./components/Header";
 
+export interface Task {
+  id: string;
+  content: string;
+  isCompleted: boolean;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasksList, setTasksList] = useState<Task[]>([]);
 
   return (
     <>
-      <Header />
+      <Header setTasksList={setTasksList} />
+      <Tasks tasksList={tasksList} setTasksList={setTasksList} />
     </>
   );
 }
