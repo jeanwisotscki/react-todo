@@ -12,6 +12,26 @@
   justify-content: space-between;
 }
 
+.tasksHeader span {
+  font-weight: 700;
+}
+
+.purple {
+  background: blueviolet;
+  background: -webkit-linear-gradient(180deg, violet, blueviolet);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue {
+  background: blue;
+  background: -webkit-linear-gradient(180deg, blueviolet, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .tasksContainer {
   max-height: 40vh;
   margin-top: 1rem;
@@ -31,4 +51,27 @@
 
 .task p {
   flex: 1;
+}
+
+.task button {
+  background: none;
+  color: red;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+}
+
+.task .checkButton {
+  color: cyan;
+}
+
+.empty {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

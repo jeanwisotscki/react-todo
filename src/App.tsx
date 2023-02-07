@@ -10,7 +10,13 @@ export interface Task {
 }
 
 function App() {
-  const [tasksList, setTasksList] = useState<Task[]>([]);
+  const [tasksList, setTasksList] = useState<Task[]>([
+    {
+      id: "sadfsdf",
+      content: "tsdfsdf",
+      isCompleted: true,
+    },
+  ]);
 
   return (
     <>
