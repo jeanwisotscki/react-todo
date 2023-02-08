@@ -1,5 +1,5 @@
-import { BsTrash, BsCheckLg } from "react-icons/bs";
-import { ImCheckboxUnchecked } from "react-icons/im";
+import { TbTrash } from "react-icons/tb";
+import { BsCircle, BsFillCheckCircleFill } from "react-icons/bs";
 
 import styles from "./index.module.css";
 
@@ -17,8 +17,18 @@ const useTasks = ({ tasksList, setTasksList }: Props) => {
     setTasksList(newList);
   };
 
-  const handleToggleCompleted = (task: Task) => {
-    console.log(task);
+  const handleToggleCompleted = (id: string) => {
+    const newList = tasksList.map((task) => {
+      if (task.id === id)
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        };
+
+      return task;
+    });
+
+    return setTasksList(newList);
   };
 
   const completedTasks = tasksList.filter((task) => task.isCompleted).length;
@@ -55,19 +65,24 @@ export const Tasks = ({ tasksList, setTasksList }: Props) => {
           tasksList.map((task) => (
             <div key={task.id} className={styles.task}>
               <button
-                onClick={() => handleToggleCompleted(task)}
+                onClick={() => handleToggleCompleted(task.id)}
                 className={styles.checkButton}
               >
                 {task.isCompleted ? (
-                  <BsCheckLg size={20} />
+                  <BsFillCheckCircleFill size={20} />
                 ) : (
-                  <ImCheckboxUnchecked size={20} />
+                  <BsCircle size={20} />
                 )}
               </button>
 
-              <p>{task.content}</p>
+              <p
+                className={task.isCompleted ? styles.isCompleted : ""}
+                onClick={() => handleToggleCompleted(task.id)}
+              >
+                {task.content}
+              </p>
               <button onClick={() => handleDelete(task.id)}>
-                <BsTrash size={20} />
+                <TbTrash size={20} />
               </button>
             </div>
           ))}
