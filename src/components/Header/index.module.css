@@ -1,6 +1,6 @@
 .header {
   color: #fff;
-  background-color: #111;
+  background-color: #071108;
 
   height: 10.5rem;
 
@@ -22,10 +22,11 @@
 .logo {
   display: block;
 
-  background: -webkit-linear-gradient(180deg, #0000ff, #fff);
+  background: linear-gradient(to right, white, #aaa);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 
   font-size: 2rem;
   font-weight: 700;
@@ -68,13 +69,14 @@
   height: 100%;
 
   color: #fff;
-  background-color: rgb(0, 136, 204);
+  background-color: #5333dd;
 
   border: none;
   border-radius: 5px;
   outline: none;
 
   font-size: 1rem;
+  font-weight: bold;
   padding: 0 1.5rem;
 
   cursor: pointer;

@@ -50,14 +50,14 @@ export const Tasks = ({ tasksList, setTasksList }: Props) => {
     <section className={styles.container}>
       <div className={styles.tasksHeader}>
         <div>
-          <span className={styles.purple}>Tarefas criadas: </span>
-          <span>{tasksList.length}</span>
+          <span>Tarefas criadas: </span>
+          <strong>{tasksList.length}</strong>
         </div>
         <div>
-          <span className={styles.blue}>Concluídas: </span>
-          <span>
+          <span>Concluídas: </span>
+          <strong>
             {completedTasks} de {tasksList.length}
-          </span>
+          </strong>
         </div>
       </div>
       <div className={styles.tasksContainer}>
