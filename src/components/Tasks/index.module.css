@@ -2,8 +2,15 @@
   color: #fff;
   max-width: 50rem;
   width: 90%;
+  height: 100%;
 
   margin: 0 auto;
+  display: grid;
+  grid-template-rows:
+    auto
+    1fr;
+
+  overflow: hidden;
 }
 
 .tasksHeader {
@@ -33,9 +40,8 @@
 }
 
 .tasksContainer {
-  max-height: 40vh;
   margin-top: 1rem;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .task {
