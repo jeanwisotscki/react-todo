@@ -1,0 +1,45 @@
+.task {
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  margin-right: 1rem;
+  padding: 0 1rem;
+  border-radius: 5px;
+
+  transition: 0.1s;
+
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 1px 2px 0px,
+    rgba(255, 255, 255, 0.15) 0px 1px 3px 1px;
+}
+.task:hover {
+  background-color: #555;
+}
+
+.task p {
+  flex: 1;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.task p.isCompleted {
+  color: #888;
+  text-decoration: line-through;
+}
+
+.task button {
+  background: none;
+  color: #f15956;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+}
+
+.task .checkButton {
+  color: #9782f398;
+}

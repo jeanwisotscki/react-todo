@@ -1,0 +1,10 @@
+.tasksHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tasksHeader span {
+  color: #5333dd;
+  font-weight: 700;
+}
