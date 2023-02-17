@@ -1,30 +1,13 @@
-import React from "react";
+import { useTask } from "./useTask";
 
 import styles from "./index.module.css";
-
-import { Task } from "../../App";
 
 interface Props {
   setTasksList: any;
 }
 
 export const Header = ({ setTasksList }: Props) => {
-  const [task, setTask] = React.useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTask(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    const newTask = {
-      id: crypto.randomUUID(),
-      content: task,
-      isCompleted: false,
-    };
-
-    setTasksList((prevValues: Task[]) => [...prevValues, newTask]);
-    setTask("");
-  };
+  const { handleChange, handleSubmit, task } = useTask(setTasksList);
 
   return (
     <header className={styles.header}>
@@ -37,6 +20,7 @@ export const Header = ({ setTasksList }: Props) => {
             placeholder="Adicione uma nova tarefa"
             value={task}
             onChange={(e) => handleChange(e)}
+            onKeyDown={(e) => (e.key === "Enter" ? handleSubmit() : null)}
           />
           <button onClick={handleSubmit}>Criar</button>
         </div>
